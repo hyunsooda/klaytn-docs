@@ -134,10 +134,10 @@ The two-step transfer consists of two function calls: (1) approve the bridge con
 We do not deploy contracts in this section since we already deployed both bridge and token contracts. You must deploy first if you didn't deploy them. You can deploy the contract using `node erc20-deploy.js`.
 ```
 $ node erc20-transfer-2step.js
-> ------------------------- erc20-transfer-2step START -------------------------
-> alice balance: 100
-> requestValueTransfer..
-> alice balance: 200
+------------------------- erc20-transfer-2step START -------------------------
+alice balance: 100
+requestValueTransfer..
+alice balance: 200
 ------------------------- erc20-transfer-2step END -------------------------
 ```
 
@@ -147,25 +147,25 @@ In the case of sending KIP-7 tokens via the ERC-20 interface, we call the `appro
 The below command deploys the bridge contract and a KIP-7 contract. Then it registers and subscribes the bridge contract.
 ```
 $ node kip7-deploy.js
-> ------------------------- kip7-deploy START -------------------------
-> info.bridge: 0x1362aBc251a8FC14C40Cb59Cb112B0FC74Baa9B4
-> info.token: 0x30F194D1f25BC9b6773e59e9214b018dCc99add5
-> info.bridge: 0x49523a060E172d3591867A6c3d15c9DA770fAF7E
-> info.token: 0x73B8BF60573B2D0093312fdB79Ed6Cb1c05C62Bc
-> registering bridges to the child node
-> subscribing bridges to the child node
-> register token to subbridge..
+------------------------- kip7-deploy START -------------------------
+info.bridge: 0x1362aBc251a8FC14C40Cb59Cb112B0FC74Baa9B4
+info.token: 0x30F194D1f25BC9b6773e59e9214b018dCc99add5
+info.bridge: 0x49523a060E172d3591867A6c3d15c9DA770fAF7E
+info.token: 0x73B8BF60573B2D0093312fdB79Ed6Cb1c05C62Bc
+registering bridges to the child node
+subscribing bridges to the child node
+register token to subbridge..
 ------------------------- kip7-deploy END -------------------------
 ```
 The below command is an example of sending KIP-7 tokens using the ERC-20 interface with `requestERC20Transfer()`.
 
 ```
 $ node kip7-transfer-2step-erc20-interface.js
-> ------------------------- kip7-transfer-2step-erc20-interface START -------------------------
-> alice balance: 0
-> requestValueTransfer..
-> alice balance: 100
-> ------------------------- kip7-transfer-2step-erc20-interface END -------------------------
+------------------------- kip7-transfer-2step-erc20-interface START -------------------------
+alice balance: 0
+requestValueTransfer..
+alice balance: 100
+------------------------- kip7-transfer-2step-erc20-interface END -------------------------
 ```
 
 Please refer [service-chain-value-transfer-example](https://github.com/klaytn/servicechain-value-transfer-examples) for the other cases.
